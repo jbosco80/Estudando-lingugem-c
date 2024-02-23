@@ -11,14 +11,21 @@ int main() {
         if (opcao == 2) {
             break; // Sai do loop se o usuário escolher 2 para sair.
         } else if (opcao == 1) {
+            do{
+
             printf("Digite:\n");
             printf("1 - tabuada\n");
             printf("2 - somar\n");
             printf("3 - subtrair\n");
             printf("4 - multiplicar\n");
             printf("5 - dividir\n");
+            printf("0 - sair\n");
 
             scanf("%d", &opcao);
+
+            if (opcao == 0) {
+                break; // Sai do loop interno se o usuário digitar 0 para sair da tabuada.
+                }
 
             switch (opcao) {
                 case 1:
@@ -27,8 +34,8 @@ int main() {
                         scanf("%d", &tabuada);
 
                         if (tabuada == 0) {
-                            break; // Sai do loop interno se o usuário digitar 0 para sair da tabuada.
-                        }
+                           break; // Sai do loop interno se o usuário digitar 0 para sair da tabuada.
+                         }
 
                         printf("Tabuada do %d\n", tabuada);
 
@@ -74,6 +81,7 @@ int main() {
                     printf("Opção inválida.\n");
                     break;
             }
+            }while(opcao != 0);
         } else {
             printf("Opção inválida. Digite 1 para calcular, 2 para sair.\n");
         }
